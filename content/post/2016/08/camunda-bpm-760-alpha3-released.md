@@ -1,5 +1,5 @@
 +++
-author = "Christopher Zell"
+author = "Christopher Zell, Philipp Ossler and Daniel Meyer"
 categories = ["Execution"]
 date = "2016-08-11T12:00:00+01:00"
 tags = ["Release Note"]
@@ -9,8 +9,7 @@ title = "Camunda BPM 7.6.0-alpha3 Released"
 
 Camunda 7.6.0-alpha3 is here and it is packed with new features. The highlights are:
 
-
-
+* Reporting for Tasks
 * Support for Decisions with Literal Expressions
 * Extended Queries for Decision Requirements Definitions
 * CMMN Engine Improvements
@@ -23,6 +22,36 @@ You can [Download Camunda For Free](https://camunda.org/download/)
 or [Run it with Docker](https://hub.docker.com/r/camunda/camunda-bpm-platform/).
 
 <!--more-->
+
+# Reporting for Tasks
+
+The new alpha version comes along with a new reporting feature for Tasks.
+It is now possible to query reports of completed tasks, which are completed before or after a given date, via Java or REST API.
+
+Two different task reports are now available, a duration report and a completed task report which indicates how many tasks are completed in a time span.
+
+The duration report contains the average, minimum and maximum duration of all completed tasks for a given timeframe. Monthly and quarterly aggregation of the duration times are supported.
+
+The following example shows how to query a duration report for the completed tasks.
+```java
+   List<DurationReportResult> taskReportResults = historyService
+      .createHistoricTaskInstanceReport()
+      .completedBefore(calendar.getTime())
+      .duration(PeriodUnit.MONTH);
+```        
+The query returns a list of duration report objects, which contains for each month the average, minimum and maximum duration of all completed tasks.
+
+In the next example you see the query to get the report for the completed tasks grouped by the process definition key.
+Each report object contains a number of tasks which are completed in the time span and the task or process definition key on which the group by was done.
+```java
+   List<HistoricTaskInstanceReportResult> historicTaskInstanceReportResults = historyService
+      .createHistoricTaskInstanceReport()
+      .countByProcessDefinitionKey();
+```
+
+
+For more information about the task reports and the REST API see the [reference guide](https://docs.camunda.org/manual/latest/reference/rest/history/task/get-task-report/).
+
 
 # Support for Decisions with Literal Expressions
 
