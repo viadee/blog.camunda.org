@@ -114,6 +114,7 @@ Case Workers can now also terminate a Case:
 caseService.terminateCaseExecution(...);
 ```
 
+## Manual Activiation Rule
 Also, please note the following bugfix concerning the interpretation of the manual activation rule attribute of CMMN. This [bugfix](https://app.camunda.com/jira/browse/CAM-6362) is included in this release and originates from an official [bugfix](https://app.camunda.com/jira/browse/OMG-12) in the OMG CMMN standard.
 
 # Rolling Upgrades
@@ -123,18 +124,17 @@ Camunda ensures backwards compatibility of the database schema. Backwards compat
 A rolling upgrade is a process to perform a Camunda upgrade in a cluster. 
 The nodes are updated one by one or in groups. During the upgrade process, it is ensured that at least one node is available to handle incoming requests, guaranteeing availability and minimizing downtime.
 
-Camunda also gurantees that an older version and a newer version of the process engine can work together on a new database schema.
 {{< figure class="teaser no-border" src="architecture.png" alt="Architecture" caption="" >}}
 
 For more information about rolling upgrades see the [rolling upgrade](https://docs.camunda.org/manual/latest/update/rolling-upgrade/) documentation.
 
 # Perspective
 
-We have also started work providing monitoring and operation features for CMMN inside Camnunda Cockpit. The next alpha release will allow users to preview these features.
+We have also started work providing monitoring and operation features for CMMN inside Camunda Cockpit. The next alpha release will allow users to preview these features.
+
+{{< figure class="teaser no-border" src="cockpit-case-definition.png" alt="CMMN Cockpit" caption="" >}}
 
 # Feedback Welcome
 
 Please try out the awesome new features of this release and provide feedback by commenting on this post or reaching out to us in the [forum](https://forum.camunda.org/).
-
-
 
