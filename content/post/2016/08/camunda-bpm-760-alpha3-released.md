@@ -46,6 +46,10 @@ caseService.terminateCaseExecution(...);
 ```
 Also, please note the following bugfix concerning the interpretation of the manual activation rule attribute of CMMN. This bugfix (link to https://app.camunda.com/jira/browse/CAM-6362) is included in this release and originates from an official bugfix (link to https://app.camunda.com/jira/browse/OMG-12) in the OMG CMMN standard.
 
+# CMMN Cockpit
+
+We have also started work providing monitoring and operation features for CMMN inside Camnunda Cockpit. The next alpha release will allow users to preview these features.
+
 # Feedback Welcome
 
 Please try out the awesome new features of this release and provide feedback by commenting on this post or reaching out to us in the [forum](https://forum.camunda.org/).
