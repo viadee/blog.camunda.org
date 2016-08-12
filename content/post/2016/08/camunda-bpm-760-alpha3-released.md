@@ -12,7 +12,7 @@ Camunda 7.6.0-alpha3 is here and it is packed with new features. The highlights 
 * Reporting for Tasks
 * Support for Decisions with Literal Expressions
 * CMMN Engine Improvements
-* Support for Rolling Upgrades
+* Rolling Upgrades
 * [23 Bug Fixes](https://app.camunda.com/jira/issues/?jql=issuetype%20%3D%20%22Bug%20Report%22%20AND%20fixVersion%20%3D%207.6.0-alpha3)
 
 The [complete release notes](https://app.camunda.com/jira/secure/ReleaseNote.jspa?projectId=10230&version=14609) are available in Jira.
@@ -119,12 +119,13 @@ Also, please note the following bugfix concerning the interpretation of the manu
 
 # Rolling Upgrades
 
-Camunda ensures backwards compatibility of the database schema. Backwards compatibility makes it possible to operate an older version of the process engine on a newer version of the database schema. This guarantee enables the possibility to execute rolling upgrades.
+In the past some of our Customers wanted to upgrade there Camunda cluster with minimized downtime. One solution to do this are rolling upgrades.
 
-A rolling upgrade is a process to perform a Camunda upgrade in a cluster. 
-The nodes are updated one by one or in groups. During the upgrade process, it is ensured that at least one node is available to handle incoming requests, guaranteeing availability and minimizing downtime.
+A rolling upgrade is a process on which the nodes are updated one by one or in groups. During the upgrade process, it is ensured that at least one node is available to handle incoming requests, guaranteeing availability and minimizing downtime.
 
 {{< figure class="teaser no-border" src="architecture.png" alt="Architecture" caption="" >}}
+
+Starting from 7.6.0 Camunda ensures backwards compatibility of the database schema. Backwards compatibility makes it possible to operate an older version of the process engine on a newer version of the database schema. This guarantee enables the possibility to execute rolling upgrades.
 
 For more information about rolling upgrades see the [rolling upgrade](https://docs.camunda.org/manual/latest/update/rolling-upgrade/) documentation.
 
