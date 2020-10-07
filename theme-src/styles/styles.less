@@ -1,19 +1,14 @@
-@import "./_variables";
-@import "./_bootstrap";
+@import "_variables";
+@import "_bootstrap";
+@import "custom-fonts";
+@import "_color-variables";
+
 
 
 @import (reference) "camunda-commons-ui/resources/less/sites/base.less";
-@import "camunda-commons-ui/resources/less/shared/base.less";
-@import "camunda-commons-ui/resources/less/shared/font-opensans.less";
 @import "camunda-commons-ui/resources/less/sites/_mixins.less";
 
 
-
-html,
-body {
-  min-height: 100%;
-  position: relative;
-}
 
 // .link-no-decoration();
 
@@ -41,7 +36,7 @@ body > header {
   transition: box-shadow 0.218s ease;
 
   height: @header-height;
-  border-bottom: @header-border-bottom-width solid @header-border-bottom-color;
+  border-bottom: 3px solid #eb256d;
   color: @navbar-default-color;
   background-color: @navbar-default-bg;
   font-size: @navbar-font-size;
@@ -70,10 +65,11 @@ body > header {
   .brand-logo:before {
     color: @brand-primary;
     display: inline-block;
-    font-family: "bpmn";
+    font-family: "camunda-circle";
     font-style: normal;
     font-weight: normal;
-    content: '\e831';
+    content: '\e900';
+
   }
 
   .brand-name {
@@ -143,16 +139,6 @@ body > header {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
 .page-wrapper {
   overflow: hidden;
   position: relative;
@@ -412,7 +398,7 @@ section {
 
   > .content {
     margin-top: @line-height-computed;// * 2;
-    font-family: @font-family-sans-serif;
+    font-family: 'IBM Plex Sans';
     font-size: 17px;
     line-height: 28px;
 
